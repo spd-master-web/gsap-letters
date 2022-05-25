@@ -7,6 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Letter animation</title>
   <link rel="stylesheet" href="styles.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"></script>
 </head>
 
 <body>
@@ -14,11 +15,25 @@
   <div class="container">
     <h1>
       <span>W</span>
-      <span>O</span>
-      <span>R</span>
-      <span>D</span>
+      <span>A</span>
+      <span>Z</span>
+      <span>Z</span>
+      <span>A</span>
+      <span>P</span>
     </h1>
   </div>
+
+<script>
+  gsap.from("span", {
+    duration: .25,
+    delay: .1,
+    stagger: .15,
+    opacity: 0,
+    scale: 3,
+    textShadow:"50px 200px 0px #0003",
+    ease: "power1.out"
+  });
+</script>
 
 </body>
 

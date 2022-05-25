@@ -12,13 +12,14 @@ html {
 
   background-color: var(--bg-color);
   color: var(--color);
-  
-  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif ;
+
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
 .container {
   min-height: 90vh;
 
+  overflow: hidden;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -31,6 +32,5 @@ h1 {
 span {
   display: inline-block;
   text-shadow: 50px 50px 0px #0003;
-
   /* transform: skewX(7deg); */
 }

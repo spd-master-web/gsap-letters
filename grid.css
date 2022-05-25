@@ -1,0 +1,54 @@
+:root {
+  --color: rgb(66, 118, 130);
+  --alt-color: rgb(148, 80, 146);
+  --opt-color: rgb(148, 80, 80);
+  --bg-color: rgb(148, 80, 80);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  margin: 0;
+
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.container {
+  min-height: 90vh;
+
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.grid {
+  width: 400px;
+  height: 400px;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+
+  gap: 1rem;
+}
+
+.grid-item {
+  border: 1px solid var(--bg-color);
+}
+
+.grid-item-one {
+  grid-column: 1/2;
+  grid-row: 1/2;
+
+  background-color: var(--color);
+}
+
+.grid-item-two {
+  grid-column: 2/2;
+  grid-row: 1/2;
+
+  background-color: var(--alt-color);
+}

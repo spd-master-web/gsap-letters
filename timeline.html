@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Letter animation</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"></script>
+</head>
+
+<body>
+  <button id="play" onclick="myTimeline.play()">play</button>
+  <button id="pause" onclick="myTimeline.pause()">pause</button>
+  <button id="reverse" onclick="myTimeline.reverse()">reverse</button>
+
+  <div class="container">
+    <h1>
+      <span id="a">W</span>
+      <span id="b">A</span>
+      <span id="c">Z</span>
+      <span id="d">Z</span>
+      <span id="e">A</span>
+      <span id="f">P</span>
+    </h1>
+  </div>
+
+<script>
+  // https://greensock.com/docs/v3/GSAP/Timeline
+  // define a value to use in more than one place
+  const myDuration = .15;
+
+  // define the gsap timeline
+  const myTimeline = new gsap.timeline({
+    // -1 value will repeat infinetly
+    repeat: -1,
+    // front to end, end to front, ...
+    yoyo: true
+  });
+
+  myTimeline.to("#a", {duration: myDuration, scale: 2, ease: "bounce.out"});
+  myTimeline.to("#b", {duration: myDuration, rotate: 90, ease: "bounce.out"});
+  myTimeline.to("#c", {duration: myDuration, scale: .5, ease: "bounce.out"});
+  myTimeline.to("#d", {duration: myDuration, opacity: .3, ease: "bounce.out"});
+  myTimeline.to("#e", {duration: myDuration, y: 100, ease: "bounce.out"});
+  myTimeline.to("#f", {duration: myDuration, skewX: 18, ease: "bounce.out"}, 0);
+</script>
+
+</body>
+
+</html>
