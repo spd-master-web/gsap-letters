@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ScrollTrigger</title>
+  <link rel="stylesheet" href="scrolltrigger.css">
+</head>
+<body>
+
+  <section class="section">
+    <blockquote class="blockquote">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum eaque ea quod nemo repellendus cupiditate ipsa, dolorum, earum, saepe beatae cum ut aperiam. Libero blanditiis omnis minima, voluptatum quos commodi.
+    </blockquote>
+  </section>
+
+  <section class="section-pin">
+    <blockquote class="blockquote-pin">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum eaque ea quod nemo repellendus cupiditate ipsa, dolorum, earum, saepe beatae cum ut aperiam. Libero blanditiis omnis minima, voluptatum quos commodi.
+    </blockquote>
+  </section>
+
+  <section class="section-circle">
+    <div class="circle"></div>
+  </section>
+
+  <section class="section-words">
+    <blockquote class="blockquote-words">
+      <span>Let's </span>
+      <span>move </span>
+      <span>the </span>
+      <span>school.</span>
+    </blockquote>
+  </section>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/ScrollTrigger.min.js"></script>
+  <script>
+    gsap.to(".circle", {
+      scrollTrigger: {
+        trigger: ".section-circle",
+        toggleActions: "play reverse play reverse",
+        markers: true,
+        start: "50% 70%"
+      }, backgroundColor: "red", scale: 2
+    });
+
+
+    gsap.from(".blockquote-words span", {
+      scrollTrigger: {
+        trigger: ".section-words",
+        markers: false,
+        start: "50% 70%",
+        end: "60% 60%",
+        scrub: false
+      },
+      duration: .5,
+      opacity: 0,
+      y: 100,
+      stagger: .5
+    })
+
+
+    gsap.to(".blockquote-pin", {
+      scrollTrigger: {
+        trigger: ".section-pin",
+        pin: false,
+        markers: false
+      }
+    });
+
+    gsap.to(".blockquote", { scrollTrigger: {
+      trigger: ".section",
+      markers: false,
+      start: "50% 40%",
+      end: "60% 30%",
+      scrub: true // smooth scrubbing, catch up to the scrollbar
+    }, fontSize: 11, y: "-200"});
+  </script>
+</body>
+</html>

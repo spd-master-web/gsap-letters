@@ -1,0 +1,32 @@
+body {
+  margin: 0;
+}
+
+section {
+  position: relative;
+  min-height: 200vh;
+
+  border: 5px solid red
+}
+
+.circle {
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+
+  box-shadow: 20px 20px 2px rgba(0, 0, 255, 0.276);
+}
+
+.one {
+  background-color: blue;
+}
+
+.two {
+  background-color: red;
+  top: 40%;
+  left: 40%;
+}

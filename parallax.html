@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GSAP Parallax</title>
+  <link rel="stylesheet" href="parallax.css">
+</head>
+<body>
+
+  <section>
+    <div class="circle one"></div>
+    <div class="circle two"></div>
+  </section>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/ScrollTrigger.min.js"></script>
+  <script>
+    gsap.to(".one", {
+      scrollTrigger: {
+        trigger: "section",
+        scrub: true
+      },
+      y: -500,
+      scale: .7
+    });
+
+    gsap.to(".circle", {
+      scrollTrigger: {
+        trigger: "section",
+        scrub: true
+      },
+      boxShadow: "-20px -20px 20px red"
+    })
+
+  </script>
+</body>
+</html>

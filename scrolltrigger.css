@@ -1,0 +1,45 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background-color: rgb(130, 180, 20);
+
+  font-size: 20px;
+  font-family: 'Times New Roman', Times, serif;
+  color: white;
+}
+
+section {
+  min-height: 100vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.section-pin {
+  background-color: yellowgreen;
+  background-image: linear-gradient(to left, rgb(175, 2, 2) 20%, orange 20% 40%, yellow 40% 60%, green 60% 80%, blue 80%);
+}
+
+blockquote {
+  max-width: 40ch;
+  font-size: 3rem;
+}
+
+span {
+  display: inline-block;
+}
+
+.section-circle {
+  background-color: yellow;
+}
+
+.circle {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background-color: orange;
+}

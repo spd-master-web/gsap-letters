@@ -9,46 +9,54 @@
   box-sizing: border-box;
 }
 
-html {
-  margin: 0;
+body {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 18px;
+}
 
-  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+html {
+  margin: 5rem;
+  font-family: 'Montserrat', 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+h1, h2 {
+  font-weight: 400;
+  padding-top: 2rem;
+  border-top: 1px solid #3336;
+}
+
+.big {
+  font-size: 5rem;
+  font-style: italic;
+  font-weight: 400;
 }
 
 .container {
-  min-height: 90vh;
-
-  overflow: hidden;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  box-shadow: 15px 15px 40px #ff000033;
 }
 
 .grid {
-  width: 400px;
-  height: 400px;
+  width: 100%;
 
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 1fr 1fr 1fr;
-
+  grid-template-columns: repeat(3, 1fr);
   gap: 1rem;
 }
 
 .grid-item {
-  border: 1px solid var(--bg-color);
+  padding: 5rem;
 }
 
 .grid-item-one {
-  grid-column: 1/2;
-  grid-row: 1/2;
-
-  background-color: var(--color);
+  grid-column: span 3;
 }
 
-.grid-item-two {
-  grid-column: 2/2;
-  grid-row: 1/2;
 
-  background-color: var(--alt-color);
+.test-image {
+  width: 10rem;
+  height: 10rem;
+
+  position: fixed;
+  top: 5rem;
+  right: 5rem;
 }

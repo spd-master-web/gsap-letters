@@ -7,25 +7,85 @@
   <title>CSS Grid</title>
   <link rel="stylesheet" href="grid.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/ScrollTrigger.min.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,700;1,700&display=swap" rel="stylesheet">
 </head>
 <body>
-
+  <img src="test.svg" class="test-image" alt="">
   <div class="container">
     <div class="grid">
+      <div class="grid-item">
+        <h2>ALL</h2>
+      </div>
+      <div class="grid-item">
+        <h2>ABOUT</h2>
+      </div>
+      <div class="grid-item">
+        <h2>GRID</h2>
+      </div>
+      <div class="grid-item grid-item-one">
+        <h1>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Minus, illo, quisquam deleniti consectetur sit nihil sed iste incidunt doloremque, unde molestias tenetur rerum! Nulla quos expedita, molestias id provident voluptate.</h1>
+      </div>
+      <div class="grid-item">
+        <h2>Scroll Trigger</h2>
+      </div>
+      <div class="grid-item grid-item-one">
+        <p class="big">Lorem ipsum dolor sit amet <a href="#">consectetur</a>, adipisicing elit. Minus, illo, quisquam deleniti consectetur sit nihil sed iste incidunt doloremque, unde molestias tenetur rerum! Nulla quos expedita, molestias id provident voluptate.</p>
+      </div>
+      <div class="grid-item"></div>
+      <div class="grid-item">
+        <img src="https://placekitten.com/300/300" class="image" alt="">
+      </div>
       <div class="grid-item"></div>
       <div class="grid-item"></div>
       <div class="grid-item"></div>
-      <div class="grid-item"></div>
-      <div class="grid-item"></div>
-      <div class="grid-item"></div>
-      <div class="grid-item"></div>
-
-      <div class="grid-item-one"></div>
-      <div class="grid-item-two"></div>
+      <div class="grid-item grid-item-one">
+        <p>&copy; Lorem ipsum dolor sit amet consectetur, adipisicing elit. Minus, illo, quisquam deleniti consectetur sit nihil sed iste incidunt doloremque, unde molestias tenetur rerum! Nulla quos expedita, molestias id provident voluptate.</p>
+      </div>
     </div>
   </div>
 
   <script>
+    gsap.to(".image", {
+      scrollTrigger: {
+        trigger: ".image",
+        pin: true,
+        start: "center center",
+        end: "+=500",
+        scrub: 1,
+        markers: false
+      },
+      rotate: 360,
+      scale: 2
+    });
+    gsap.to(".big", {
+      scrollTrigger: {
+        trigger: ".big",
+        pin: false,
+        start: "top center",
+        end: "bottom center",
+        scrub: 1,
+        markers: false
+      },
+      color: "#ff0000"
+    });
+
+
+    var rotate = gsap.timeline({
+      scrollTrigger:{
+        trigger: "body",
+        pin: false,
+        scrub: 2,
+        start: 'top top',
+        end:'+=10000',
+      }
+    })
+    .to('.test-image', {
+      rotation:360*5,
+      duration:1, ease:'none',
+    })
 
   </script>
 </body>
