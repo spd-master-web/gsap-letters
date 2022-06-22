@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ece header</title>
+</head>
+<body>
+  <style>
+    header {
+      width: 100%;
+      position: fixed;
+      top: 0;
+      left: 0;
+      /* centering */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      /* color */
+      background-color: black;
+      color: white;
+    }
+    section {
+      height: 200vh;
+    }
+  </style>
+
+  <header>
+    <h1>Ece</h1>
+  </header>
+
+  <section></section>
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/ScrollTrigger.min.js"></script>
+  <script>
+    gsap.to("header", {
+      scrollTrigger: {
+        trigger: "header",
+        toggleActions: "play reverse play reverse",
+        markers: true
+      }, backgroundColor: "purple", padding: "2rem 0"
+    });
+
+
+  </script>
+</body>
+</html>
